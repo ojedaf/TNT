@@ -1,0 +1,68 @@
+class_num: 5
+sample_num_per_class: 5
+batch_num_per_class: 10
+train_episode: 11400
+val_episode: 200
+test_episode: 10000
+num_episode_decay: 4000
+num_episode_to_val: 100 
+learning_rate_cnaps: 0.0005
+train_mode: True
+last_accuracy: 0
+feature_adaptation: 'film'
+distance_metric: 'mahalanobis'
+train_feature_encoder: False
+num_task_per_batch: 16
+type_encoder: 'text_encoder'
+comet:
+  api_key: 'FbkM3YZFUZNIIUQ4EDJc8wsBv'
+  project_name: 'fslv'
+  workspace: 'afvilla'
+dataset:
+  name: 'epicKitchens'
+  path_metatrain: '/mnt/nas2/GrimaRepo/afvilla/epic-kitchens/EpicKitchens_train_split_v2.pkl'
+  path_metaval: '/mnt/nas2/GrimaRepo/afvilla/epic-kitchens/EpicKitchens_val_split_v2.pkl'
+  path_metatest: '/mnt/nas2/GrimaRepo/afvilla/epic-kitchens/EpicKitchens_test_split_v2.pkl'
+  path_frames: '/workspace1/afvilla/epic-kitchens'
+TSM:
+  num_class: 58
+  num_segments: 8
+  modality: 'RGB'
+  arch: 'resnet34'
+  consensus_type: 'avg'
+  dropout: 0.5
+  img_feature_dim: 256
+  no_partialbn: True
+  pretrain: 'imagenet'
+  shift: False
+  shift_div: 8
+  shift_place: 'blockres'
+  fc_lr5: False
+  temporal_pool: False
+  non_local: False
+  test_crops: 1
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.0001
+  lr_steps: [20.0, 40.0]
+  lr_type: 'step'
+  epochs: 50
+  clip_gradient: 20.0
+  reduce_channs: False
+  chann_dim: 64
+  pooling: 'mean'
+  ratio: 2
+checkpoints:
+  path_feature_encoder: '/mnt/nas2/GrimaRepo/afvilla/FewShotProject/baseline/FewShot_ActionRec_Oxford/model/temporalShiftModule/checkpoint/TSM_epicKitchens_RGB_resnet34_avg_segment8_e50/ckpt.best.pth.tar'
+  path_model: '/mnt/nas2/GrimaRepo/afvilla/FewShotProject/baseline/FewShot_ActionRec_Oxford/checkpoints/EpicKitchens_relation_network_cnaps_TSN_8Fram_resnet34_model_Encoder_Text_sentenceEmb_label_Linear_1_DynamicProto_1Heads_NewVer_PretrainedSetup_v2'
+text:
+  type: 'label'
+  text_emb: 'sentence_level' 
+  num_layers: 1
+  ratio: 10
+  temp_dim: 40
+  embedding_size: 64
+class_representation_module: 
+  active: True
+  num_heads: 1
+  temp_att: False

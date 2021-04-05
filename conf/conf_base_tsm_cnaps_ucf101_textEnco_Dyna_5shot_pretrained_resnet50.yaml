@@ -1,0 +1,68 @@
+class_num: 5
+sample_num_per_class: 5
+batch_num_per_class: 5
+train_episode: 15000
+val_episode: 200
+test_episode: 10000
+num_episode_decay: 4000
+num_episode_to_val: 100 
+learning_rate_cnaps: 0.0005
+train_mode: True
+last_accuracy: 0
+feature_adaptation: 'film'
+distance_metric: 'mahalanobis'
+train_feature_encoder: False
+num_task_per_batch: 16
+type_encoder: 'text_encoder'
+comet:
+  api_key: 'FbkM3YZFUZNIIUQ4EDJc8wsBv'
+  project_name: 'fslv'
+  workspace: 'afvilla'
+dataset:
+  name: 'ucf101'
+  path_metatrain: '/mnt/nas/GrimaRepo/datasets/afvilla/UCF101/UCF101_metatrain_paper.json'
+  path_metaval: '/mnt/nas/GrimaRepo/datasets/afvilla/UCF101/UCF101_metaval_paper.json'
+  path_metatest: '/mnt/nas/GrimaRepo/datasets/afvilla/UCF101/UCF101_metatest_paper.json'
+  path_frames: '/workspace1/afvilla/meta-ucf101'
+TSM:
+  num_class: 70
+  num_segments: 8
+  modality: 'RGB'
+  arch: 'resnet50'
+  consensus_type: 'avg'
+  dropout: 0.5
+  img_feature_dim: 256
+  no_partialbn: True
+  pretrain: 'imagenet'
+  shift: False
+  shift_div: 8
+  shift_place: 'blockres'
+  fc_lr5: False
+  temporal_pool: False
+  non_local: False
+  test_crops: 1
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.0001
+  lr_steps: [20.0, 40.0]
+  lr_type: 'step'
+  epochs: 50
+  clip_gradient: 20.0
+  reduce_channs: False
+  chann_dim: 64
+  pooling: 'mean'
+  ratio: 2
+checkpoints:
+  path_feature_encoder: '/mnt/nas2/GrimaRepo/afvilla/FewShotProject/baseline/FewShot_ActionRec_Oxford/model/temporalShiftModule/checkpoint/TSM_ucf101_RGB_resnet50_avg_segment8_e13/ckpt.best.pth.tar'
+  path_model: '/mnt/nas2/GrimaRepo/afvilla/FewShotProject/baseline/FewShot_ActionRec_Oxford/checkpoints/UCF101_relation_network_cnaps_TSN_NSamp_resnet50_model_Encoder_Rob_Only_Text_sentenceEmb_Linear_1_DynamicModulePro_NewVer2_Pretrained_paperV2_'
+text:
+  type: 'class_name'
+  text_emb: 'sentence_level' 
+  num_layers: 1
+  ratio: 10
+  temp_dim: 40
+  embedding_size: 64
+class_representation_module: 
+  active: True
+  num_heads: 1
+  temp_att: False
