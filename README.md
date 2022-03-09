@@ -16,14 +16,19 @@ Recently, few-shot video classification has received an increasing interest. Cur
 
 ## Prerequisites
 
-It is neccesary to install all the dependencies and libraries needed to run the project.
+It is essential to install all the dependencies and libraries needed to run the project.
+
 ```
 pip install -r requirements.txt
 ```
 
 ## Dataset
 
+We provide the metadata of each dataset. This metadata contains the meta-train set, meta-val set, and meta-test set. However, you have to download the datasets that you will use. 
+
 ## Usage
+
+
 
 ## Citation
 
