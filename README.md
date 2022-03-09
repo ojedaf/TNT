@@ -28,7 +28,7 @@ We provide the metadata of each dataset. This metadata contains the meta-train s
 
 ## Usage
 ```
-python training_phase1.py -conf './conf/conf_TNTv2_SSv2_textEnco_DynaMod_phase1_Just_Clip.yaml'
+python train_few_shot_TSM_CNAPS.py -conf './conf/conf_TNTv2_SSv2_textEnco_DynaMod_phase1_Just_Clip.yaml'
 ```
 
 ## Citation
