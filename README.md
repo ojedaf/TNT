@@ -27,8 +27,9 @@ pip install -r requirements.txt
 We provide the metadata of each dataset. This metadata contains the meta-train set, meta-val set, and meta-test set. However, you have to download the datasets that you will use. 
 
 ## Usage
-
-
+```
+python training_phase1.py -conf './conf/conf_TNTv2_SSv2_textEnco_DynaMod_phase1_Just_Clip.yaml'
+```
 
 ## Citation
 
