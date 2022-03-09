@@ -16,6 +16,11 @@ Recently, few-shot video classification has received an increasing interest. Cur
 
 ## Prerequisites
 
+It is neccesary to install all the dependencies and libraries needed to run the project.
+```
+pip install -r requirements.txt
+```
+
 ## Dataset
 
 ## Usage
