@@ -27,6 +27,8 @@ pip install -r requirements.txt
 We provide the metadata of each dataset. This metadata contains the meta-train set, meta-val set, and meta-test set. However, you have to download the datasets that you will use. 
 
 ## Usage
+
+The configuration file must be created or modified according to the path of the code and your particular requirements. 
 ```
 python train_few_shot_TSM_CNAPS.py -conf './conf/conf_base_tsm_cnaps_epicKitchens_textEnco_DynaMod_5shot_pretrained_resnet50.yaml'
 ```
